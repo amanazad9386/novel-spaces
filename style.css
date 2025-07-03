@@ -1,0 +1,496 @@
+/* theme Name:my-custom-theme
+Text Domain: my-custom-theme
+Version:1.0 */
+
+/* Reset styles */
+* {
+  margin: 0;
+
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+
+
+/* Optional: make sure your content scrolls above the background */
+.page-content {
+  position: relative;
+  z-index: 1;
+  padding: 50px;
+}
+
+
+/* HEADER STYLING */
+.custom-header {
+   /* dark shade */
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  height: 48px;
+  width: 48px;
+}
+
+.logo-text h1 {
+  font-size: 23px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.logo-text p {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 2px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+/* Navigation */
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 6px 0;
+  position: relative;
+  transition: color 0.3s;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.nav-menu a:hover {
+  color: #00c3ff;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #00c3ff;
+  left: 0;
+  bottom: -2px;
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.page-background {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url('./assets/images/home.JPG');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* dark overlay */
+  z-index: -1;
+}
+.paragraph {
+  text-align: center;
+  margin-top: 130px;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  font-size: 4.0rem;
+}
+.paragraph p1{
+  text-align: center;
+  margin-top: 130px;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  font-size: 1.2rem;
+}
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-book {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: rgba(13, 82, 117, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-book:hover {
+  background: rgba(0, 195, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 195, 255, 0.5);
+  border-color: aqua;
+}
+/* Dropdown styles */
+/* Dropdown parent */
+.nav-menu .dropdown {
+  position: relative;
+}
+
+/* Dropdown toggle link */
+.nav-menu .dropdown > a {
+  cursor: pointer;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: rgba(84, 79, 79, 0.9); /* Glassy dark */
+  padding: 10px 0;
+  min-width: 180px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  z-index: 999;
+  border-color: rgba(169, 105, 105, 0.148);
+ 
+}
+
+/* Dropdown item styles */
+/* Top-level menu */
+/* Top-level menu (simple text style) */
+.menu-list {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-list li {
+  position: relative;
+}
+
+.menu-list li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 5px;
+  transition: color 0.3s ease;
+}
+
+.menu-list li a:hover {
+  color: #00bcd4; /* light blue or any highlight color */
+}
+
+/* Dropdown menu (no background, matches plain style) */
+.menu-list li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000; /* keep background dark for visibility */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  z-index: 999;
+  min-width: 160px;
+}
+
+.menu-list li:hover > ul {
+  display: block;
+}
+
+.menu-list li ul li a {
+  padding: 10px 15px;
+  display: block;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.menu-list li ul li a:hover {
+  color: #00bcd4;
+  background-color: transparent;
+}
+
+/* Optional: dropdown arrow for LOCATIONS */
+.menu-list li.menu-item-has-children > a::after {
+  content: " ▼";
+  font-size: 0.6em;
+  margin-left: 5px;
+}
+
+.menu-list li.menu-item-has-children > a::after {
+  content: " ▼";
+  font-size: 0.7em;
+}
+/* Contact Form Layout Wrapper */
+/* Glass-Styled WPForm for ID 65 */
+#wpforms-form-65 {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  padding: 40px;
+  max-width:400px;
+  margin: 30px auto;
+  color: #fff;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+}
+
+/* Label Styling */
+#wpforms-form-65 .wpforms-field-label {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Input & Textarea Fields */
+#wpforms-form-65 input[type="text"],
+#wpforms-form-65 input[type="email"],
+#wpforms-form-65 input[type="tel"],
+#wpforms-form-65 textarea {
+  width:100%;
+  padding: 14px 16px;
+  margin-bottom:5px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+/* Placeholder Color */
+#wpforms-form-65 input::placeholder,
+#wpforms-form-65 textarea::placeholder {
+  color: #ccc;
+}
+
+/* Submit Button */
+#wpforms-form-65 .wpforms-submit {
+  background-color: #00bcd4;
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#wpforms-form-65 .wpforms-submit:hover {
+  background-color: #0097a7;
+}
+
+/* Required Field Red Asterisk */
+#wpforms-form-65 .wpforms-field-required {
+  color: rgb(234, 232, 232);
+}
+
+/* First & Last Name Inline */
+#wpforms-form-65 .wpforms-field-name .wpforms-field-row {
+  display: flex;
+  gap:7px;
+  margin-bottom: 15px;
+}
+
+#wpforms-form-65 .wpforms-field-name-first,
+#wpforms-form-65 .wpforms-field-name-last {
+  flex: 10;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 600px) {
+  #wpforms-form-65 {
+    padding: 25px;
+  }
+
+  #wpforms-form-65 .wpforms-field-name .wpforms-field-row {
+    flex-direction: column;
+  }
+}
+
+
+/* Outer layout */
+.solution-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+/* Group of cards */
+.solution-cards-group {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Each card style */
+.solution-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 25px;
+  color: #fff;
+  border: 1px solid rgba(106, 237, 244, 0.785); /* ✅ Thin glowing border */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2); /* ✅ Soft neon shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.solution-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.35); /* ✅ Stronger on hover */
+}
+.solution-card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.solution-card p {
+  font-size: 15px;
+  color: #ccc;
+}
+
+/* Right side images */
+.solution-images {
+  height:700px;
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.solution-images img {
+  height: 50%;
+  width:100%;
+  border-radius: 14px;
+  box-shadow: 0 0 10px rgba(0,255,255,0.1);
+}
+.testimonials-section {
+  padding: 20px 10px;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.testimonial-slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 50%;
+}
+
+.testimonial-slide-pair {
+  display: flex;
+  flex-wrap: nowrap;         /* ensures they stay in one row */
+  justify-content: space-around;
+  align-items: stretch;
+  gap: 10px;
+  min-width: 50%;
+  box-sizing: border-box;
+}
+
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  width: 75%;
+  text-align: left;
+  flex: 1 1 45%;
+  max-width: 30%;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.03);
+}
+
+.testimonial-image img {
+  max-width: 50%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.testimonial-content p {
+  font-style: italic;
+  margin-bottom:9px;
+  color: #eee;
+}
+
+.testimonial-content h4 {
+  margin: 0;
+  font-weight: bold;
+  color: #0ff;
+}
+.testimonial-image-wrapper {
+  width: 100%;
+  height: 5px; /* smaller height */
+  overflow: hidden;
+  margin: 4px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.testimonial-image-wrapper img {
+  width: 100%;
+  height: 150%;
+  object-fit: cover;
+  border-radius: 8px;
+}
