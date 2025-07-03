@@ -29,3 +29,12 @@ This is a custom WordPress theme developed for showcasing flexible and managed o
 4. Import `sample-data.xml` (optional) if provided.
 5. Add 3–4 testimonials from WP Admin > Testimonials.
 6. Visit homepage to see animations and custom features.
+
+### Homepage
+![Homepage with testimonial slider](home.png)
+
+### Solution Page
+![Solution](solution-page.png)
+
+### Contact Form
+![Contact](contact-form-oage.png)
